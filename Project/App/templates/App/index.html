@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMI Calculator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'App/css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'App/js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>EMI Calculator</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form id="emiForm">
+                {% csrf_token %}
+                <label for="principal">Principal Amount:</label>
+                <input type="number" id="principal" name="principal" step="0.01" required><br>
+                
+                <label for="rate">Rate of Interest (annual):</label>
+                <input type="number" id="rate" name="rate" step="0.01" required><br>
+                
+                <label for="time">Time Period (years):</label>
+                <input type="number" id="time" name="time" step="0.01" required><br>
+                
+                <button type="submit">Calculate EMI</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>Developed by Anirudh P Nayak(1JT21CS014)</p>
+    </footer>
+</body>
+</html>
